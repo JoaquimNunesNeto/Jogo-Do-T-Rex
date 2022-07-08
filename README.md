@@ -1,1 +1,3 @@
-# Jogo-Do-T-Rex
+# Trex
+
+Aluno: Joaquim
