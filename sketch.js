@@ -113,9 +113,11 @@ function draw() {
     }
 
     //pular quando a tecla de espaço for pressionada
-    if (keyDown('space') && trex.y >= 100) {
+    if (touches.length > 0 || keyDown('space') && trex.y >= 100) {
       trex.velocityY = -12
       jumpSound.play()
+      touches = []
+      
     }
 
     //adicione gravidade
@@ -147,8 +149,9 @@ function draw() {
     obstaclesGroup.setVelocityXEach(0)
     cloudsGroup.setVelocityXEach(0)
 
-    if (mousePressedOver(restart)) {
+    if (touches.length > 0 || mousePressedOver(restart)) {
       reset();
+      touches = []
     }
 
   }
